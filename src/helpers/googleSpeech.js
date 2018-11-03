@@ -1,3 +1,6 @@
+import GoogleSpeech from "./helpers/googleSpeech.js";
+import * as helpers from './helpers/witai';
+
 class GoogleSpeech {
   constructor() {
     this.recognition = new webkitSpeechRecognition();

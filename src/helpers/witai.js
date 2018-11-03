@@ -11,5 +11,4 @@ export async function getIntent(text) {
   const url = `https://api.wit.ai/message?v=20181103&q=${text}`;
   const data = await (await fetch(url, options)).json();
   console.log(data);
-  // return intent;
 }

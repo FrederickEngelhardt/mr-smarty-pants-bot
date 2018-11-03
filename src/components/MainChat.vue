@@ -8,14 +8,14 @@
   import MrSmartyPants from '@/components/MrSmartyPants.vue'
 
   export default {
-  name: 'MainChat',
+    name: 'MainChat',
     components: {
       MrSmartyPants
     },
-  props: {
-    msg: String
+    props: {
+      msg: String
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

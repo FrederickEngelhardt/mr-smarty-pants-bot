@@ -6,19 +6,25 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import GoogleSpeech from "./helpers/googleSpeech.js";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     HelloWorld
+  },
+
+  created() {
+    const speech = new GoogleSpeech();
+    speech.init();
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -8,7 +8,7 @@
   import MrSmartyPants from '@/components/MrSmartyPants.vue'
 
   export default {
-  name: 'HelloWorld',
+  name: 'MainChat',
     components: {
       MrSmartyPants
     },

@@ -65,7 +65,7 @@
 
 <script>
   export default {
-    name: 'MrSmartyPants.vue',
+    name: 'MrSmartyPants',
     data() {
       return {
         isListening: false,

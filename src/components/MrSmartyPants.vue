@@ -5,13 +5,13 @@
                 <g id="Left-Antenna">
                     <path id="Rectangle-5" fill="#3E4347" d="M16 287h19v12H16z"/>
                     <path id="Rectangle-6" fill="#3E4347" d="M16 43h12v256H16z"/>
-                    <circle id="Oval-3" class="left-ant flash" cx="22" cy="22" r="22"/>
+                    <circle id="Oval-3" :class="{flash: isListening}" class="left-ant" cx="22" cy="22" r="22"/>
                     <rect id="Left-Antenna-Mount" fill="#89957B" x="35" y="262" width="13" height="61" rx="6.5"/>
                 </g>
                 <g id="Right-Antenna" transform="translate(317)">
                     <path id="Rectangle-5-Copy" fill="#3E4347" d="M13 287h19v12H13z"/>
                     <path id="Rectangle-6-Copy" fill="#3E4347" d="M20 43h12v256H20z"/>
-                    <circle id="Oval-3-Copy" class="right-ant flash" cx="26" cy="22" r="22"/>
+                    <circle id="Oval-3-Copy" :class="{flash: isListening}" class="right-ant" cx="26" cy="22" r="22"/>
                     <rect id="Right-Antenna-Mount" fill="#89957B" y="262" width="13" height="61" rx="6.5"/>
                 </g>
                 <rect id="Head-Copy" fill="#B6C3A8" x="43" y="69" width="280" height="280" rx="21"/>
@@ -24,7 +24,7 @@
                     <circle class="right-eye__pupil" id="Oval-2" fill="#FB5667" cx="52" cy="52" r="15"/>
                 </g>
                 <g id="Mouth-Copy" transform="translate(64 248)">
-                    <path class="robot-head__lips talk"
+                    <path :class="{talk: isTalking}" class="robot-head__lips"
                           d="M35 4.5C18.155 4.5 4.5 18.155 4.5 35S18.155 65.5 35 65.5h169c16.845 0 30.5-13.655 30.5-30.5S220.845 4.5 204 4.5H35z"
                           id="Lips" stroke="#F0FEDB" stroke-width="9"/>
                     <g id="Teeth" transform="translate(32 14)" fill="#555C56">
@@ -65,7 +65,13 @@
 
 <script>
   export default {
-    name: 'MrSmartyPants.vue'
+    name: 'MrSmartyPants.vue',
+    data() {
+      return {
+        isListening: false,
+        isTalking: false
+      }
+    }
   }
 </script>
 

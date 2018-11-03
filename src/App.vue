@@ -8,8 +8,6 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import GoogleSpeech from "./helpers/googleSpeech.js";
-import * as helpers from './helpers/witai';
-const { getIntent } = helpers;
 
 export default {
   name: "app",
@@ -20,7 +18,6 @@ export default {
   created() {
     const speech = new GoogleSpeech();
     speech.init();
-    getIntent('joke')
   }
 };
 </script>

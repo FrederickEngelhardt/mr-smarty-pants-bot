@@ -1,5 +1,4 @@
-import GoogleSpeech from "./helpers/googleSpeech.js";
-import * as helpers from './helpers/witai';
+import * as helpers from './witai';
 
 class GoogleSpeech {
   constructor() {

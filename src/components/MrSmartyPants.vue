@@ -66,10 +66,14 @@
 <script>
   export default {
     name: 'MrSmartyPants',
-    data() {
-      return {
-        isListening: false,
-        isTalking: false
+    props: {
+      isListening: {
+        type: Boolean,
+        default: false
+      },
+      isTalking: {
+        type: Boolean,
+        default: false
       }
     }
   }

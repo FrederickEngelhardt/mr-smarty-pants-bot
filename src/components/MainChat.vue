@@ -1,6 +1,6 @@
 <template>
   <div class="main-chat-container">
-    <mr-smarty-pants></mr-smarty-pants>
+    <mr-smarty-pants :isListening="isListening" :isTalking="isTalking"></mr-smarty-pants>
   </div>
 </template>
 
@@ -11,6 +11,13 @@
     name: 'MainChat',
     components: {
       MrSmartyPants
+    },
+    data() {
+      return {
+        currentState: null,
+        isTalking: false,
+        isListening: false
+      }
     },
     props: {
       msg: String

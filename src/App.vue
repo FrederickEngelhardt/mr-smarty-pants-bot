@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="app-title">Mr. Smarty Pants</h1>
+    <MainChat msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MainChat from './components/MainChat.vue'
 import GoogleSpeech from "./helpers/googleSpeech.js";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    MainChat
   },
 
   created() {
@@ -24,11 +24,17 @@ export default {
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Orbitron', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+  .app-title {
+    color: rgba(255,255,255, 0.8);
+    font-weight: 900;
+    font-size: 4em;
+    text-transform: uppercase;
+  }
 </style>

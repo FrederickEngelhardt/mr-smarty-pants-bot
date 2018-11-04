@@ -1,11 +1,14 @@
 import * as helpers from './witai';
 
 class GoogleSpeech {
-  constructor() {
+  constructor(setter) {
     this.recognition = new webkitSpeechRecognition();
+    this.setter = setter;
+    this.output = 'this is default text';
   }
   init() {
     this.listen();
+    return this.output;
   }
   speak = string => {
     let msg = new SpeechSynthesisUtterance(string);
@@ -31,17 +34,11 @@ class GoogleSpeech {
     recognition.start();
     recognition.onresult = event => {
       let interim_transcript = "";
-
-      // if (typeof event.results === "undefined") {
-      //   recognition.onend = null;
-      //   recognition.stop();
-      //   return;
-      // }
-
       for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
           final_transcript = event.results[i][0].transcript;
           console.log(final_transcript);
+          this.setter(final_transcript);
           speak(final_transcript);
         } else {
           console.log(interim_transcript);

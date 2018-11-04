@@ -7,18 +7,12 @@
 
 <script>
 import MainChat from './components/MainChat.vue'
-import GoogleSpeech from "./helpers/googleSpeech.js";
 
 export default {
   name: "app",
   components: {
     MainChat
   },
-
-  created() {
-    const speech = new GoogleSpeech();
-    speech.init();
-  }
 };
 </script>
 

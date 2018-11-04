@@ -57,7 +57,7 @@
         </svg>
         <div class="speech-bubble_text-box">
             <h1 class="speech-bubble__text">
-                Hi Jerk! Hows it going? Am I a nice robot? no!!!
+                {{ message }}
             </h1>
         </div>
     </section>
@@ -66,10 +66,17 @@
 <script>
   export default {
     name: 'MrSmartyPants',
-    data() {
-      return {
-        isListening: false,
-        isTalking: false
+    props: {
+      isListening: {
+        type: Boolean,
+        default: false
+      },
+      isTalking: {
+        type: Boolean,
+        default: false
+      },
+      message: {
+        type: String
       }
     }
   }
